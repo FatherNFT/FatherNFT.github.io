@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test NFT v1</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- site styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Test NFT v1</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">General</div>
+      <div class="panel-body">
+        <div>
+          Connected account: <span id="connectedAccountDisplay">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Minting</div>
+      <div class="panel-body">
+        <div>
+          Minting Paused? <span id="mintingPausedDisplay">Loading...</span>
+        </div>
+        <div>
+          <button id="btnPauseMinting">Pause All Minting</button>
+          <button id="btnAllowMinting">Allow Minting</button>
+        </div>
+
+        <div class="margin-top">
+          <button id="btnMint">Mint</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Minter Access</div>
+      <div class="panel-body">
+        <div>
+          Public Minting Allowed? <span id="publicMintingAllowedDisplay">Loading...</span>
+        </div>
+        <div>
+          <button id="btnPausePublicMinting">Pause Public Minting</button>
+          <button id="btnAllowPublicMinting">Allow Public Minting</button>
+        </div>
+
+        <div class="margin-top">
+          <div class="input-group mb-3">
+            <input id="txtCheckMinterAddress" type="text" class="form-control" placeholder="ETH Address">
+            <button class="btn btn-outline-secondary" type="button" id="btnCheckMinter">Is Minter?</button>
+            <span id="canMintResultDisplay"></span>
+          </div>
+        </div>
+
+        <div class="margin-top">
+          <div class="input-group mb-3">
+            <textarea id="txtAddMinterAddresses" rows="10" cols="50"></textarea><br/>
+            <button class="btn btn-outline-secondary" type="button" id="btnAddMinter">Add to minter list</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Metadata</div>
+      <div class="panel-body">
+        <div>
+          Base URI: <span id="baseUriDisplay">Loading...</span>
+        </div>
+
+        <div class="margin-top">
+          <div class="input-group mb-3">
+            <input id="txtNewBaseUri" type="text" class="form-control" placeholder="New Base URI">
+            <button class="btn btn-outline-secondary" type="button" id="btnSetBaseUri">Set Base URI</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Withdrawals</div>
+      <div class="panel-body">
+        <div class="margin-top">
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="btnWithdraw">Withdraw</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Ownership</div>
+      <div class="panel-body">
+        <div>
+          Current Owner: <span id="ownerDisplay">Loading...</span>
+        </div>
+
+        <div class="margin-top">
+          <div class="input-group mb-3">
+            <input id="txtNewOwner" type="text" class="form-control" placeholder="New Contract Owner Address">
+            <button class="btn btn-outline-secondary" type="button" id="btnSetOwner">Set Owner</button>
+          </div>
+        </div>
+
+        <div class="margin-top">
+          DANGER ZONE! This cannot be undone. The contract owner has full control over the base URI and can withdraw funds to their address.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
