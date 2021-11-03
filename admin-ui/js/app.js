@@ -35,7 +35,7 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('ZTestNftv1.json', function(data) {
+    $.getJSON('ZNft.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with @truffle/contract
       var ContractArtifact = data;
       App.contracts.Nft = TruffleContract(ContractArtifact);
